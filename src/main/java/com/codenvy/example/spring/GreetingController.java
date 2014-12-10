@@ -18,7 +18,8 @@ public class GreetingController implements Controller
       calculator.setA(Double.parseDouble(request.getParameter("a")));//we need double argument//autocomplete cleared word request!!!!!
       calculator.setA(Double.parseDouble(request.getParameter("b")));
       calculator.setA(Double.parseDouble(request.getParameter("c")));
-      String result = calculator.solveRoot1() + " " + calculator.solveRoot2();
+      
+      String result = "Result=" + calculator.solveRoot1() + " " + calculator.solveRoot2();
 
       ModelAndView view = new ModelAndView("hello_view");
       view.addObject("result", result);
