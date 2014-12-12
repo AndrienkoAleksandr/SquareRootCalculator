@@ -15,12 +15,17 @@ public class GreetingController implements Controller
    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception
    {
       CalculatorOfSquareRoot calculator = new CalculatorOfSquareRoot();
-      calculator.setA(Double.parseDouble(request.getParameter("a")));//we need double argument//autocomplete cleared word request!!!!!
-      calculator.setA(Double.parseDouble(request.getParameter("b")));
-      calculator.setA(Double.parseDouble(request.getParameter("c")));
+      String coefA = request.getParameter("a");
+      String coefB = request.getParameter("b");
+      String coefC = request.getParameter("c");
+      String result = "";
+      if (coefA != null && coefB != null && coefC != null) {
+        calculator.setA(Double.parseDouble(coefA));
+        calculator.setB(Double.parseDouble(coefB));
+        calculator.setC(Double.parseDouble(coefC)); 
+        result = "Result=" + calculator.solveRoot1() + " " + calculator.solveRoot2();
+      }
       
-      String result = "Result=" + calculator.solveRoot1() + " " + calculator.solveRoot2();
-
       ModelAndView view = new ModelAndView("hello_view");
       view.addObject("result", result);
       return view;

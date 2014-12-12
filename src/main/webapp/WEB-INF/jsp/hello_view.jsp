@@ -5,13 +5,13 @@
       <form method="post" action="hello">
         Enter coeficients of root:
         <label for="a">a:</label>
-        <input type=text size="10" name="a" >*x*x + 
+        <input type=text size="10" name="a" id="a">*x*x + 
         
         <label for="b">b:</label>
-        <input type=text size="10" name="b" >*x + 
+        <input type=text size="10" name="b" id="b">*x + 
         
         <label for="c">c:</label>
-        <input type=text size="10" name="c" >
+        <input type=text size="10" name="c" id="c">
         <input type=submit name="submit" value="Solve">
       </form>
     </div>
