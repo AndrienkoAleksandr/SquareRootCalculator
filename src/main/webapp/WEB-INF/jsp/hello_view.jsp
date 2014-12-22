@@ -18,9 +18,11 @@
     <div>
       <%
           {
-            java.lang.String answer = "result " + (java.lang.String)request.getAttribute("result");   
+            java.lang.String answer = (java.lang.String)request.getAttribute("result"); 
+            java.lang.String error = (java.lang.String)request.getAttribute("error");
       %>
       <span><%=answer%></span>
+      <div><%=error%></div>
       <%
           }
       %>
